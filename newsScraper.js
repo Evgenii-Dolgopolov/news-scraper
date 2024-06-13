@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer"
 import chromium from "chromium"
 
-// const chromiumPath = chromium.path
+const chromiumPath = chromium.path
 // console.log(chromiumPath)
 // const chromiumPath = process.env.CHROMIUM_PATH || chromium.path
 
@@ -24,7 +24,7 @@ const newsScraper = async (
 
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath(),
+    executablePath: chromiumPath,
     headless: chromium.headless,
     ignoreHTTPSErrors: true,
   })
