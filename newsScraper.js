@@ -1,8 +1,10 @@
 import puppeteer from "puppeteer"
 import chromium from "chromium"
 
-const chromiumPath = chromium.path
-console.log(chromiumPath)
+// const chromiumPath = chromium.path
+// console.log(chromiumPath)
+const chromiumPath = process.env.CHROMIUM_PATH || '/Users/one/Desktop/dev/my-apps/js-projects/news-scraper/node_modules/chromium/lib/chromium/chrome-mac/Chromium.app/Contents/MacOS/Chromium';
+
 
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
@@ -17,9 +19,9 @@ const newsScraper = async (
 ) => {
   // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
   const browser = await puppeteer.launch({
-    // executablePath: chromiumPath,
-    // headless: true, // Set to true for running in CI environments
-    // args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
+    executablePath: chromiumPath,
+    headless: true, // Set to true for running in CI environments
+    args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
 
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
