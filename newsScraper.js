@@ -1,9 +1,6 @@
-import puppeteer from "puppeteer-core"
-// import chromium from "chromium"
+import puppeteer from "puppeteer"
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
-
-const chromiumPath = chromium.path
 
 const newsScraper = async (
   url,
@@ -14,16 +11,7 @@ const newsScraper = async (
   websiteName
 ) => {
   // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
-  const browser = await puppeteer.launch({
-    headless: true, // Set to true for running in CI environments
-    args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
-
-    // args: chromium.args,
-    // defaultViewport: chromium.defaultViewport,
-    // executablePath: await Chromium.executablePath(),
-    // headless: chromium.headless,
-    // ignoreHTTPSErrors: true,
-  })
+  const browser = await puppeteer.launch()
 
   // Create a new page
   const page = await browser.newPage()
