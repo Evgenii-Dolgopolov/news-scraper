@@ -24,7 +24,7 @@ const newsScraper = async (
 
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
-    executablePath: chromiumPath,
+    // executablePath: chromiumPath,
     headless: chromium.headless,
     ignoreHTTPSErrors: true,
   })
