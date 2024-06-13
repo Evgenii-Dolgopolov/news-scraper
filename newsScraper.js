@@ -3,7 +3,7 @@ import chromium from "chromium"
 
 // const chromiumPath = chromium.path
 // console.log(chromiumPath)
-const chromiumPath = process.env.CHROMIUM_PATH || chromium.path
+// const chromiumPath = process.env.CHROMIUM_PATH || chromium.path
 
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
@@ -24,7 +24,7 @@ const newsScraper = async (
 
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
-    executablePath: chromiumPath,
+    executablePath: await chromium.executablePath(),
     headless: chromium.headless,
     ignoreHTTPSErrors: true,
   })
