@@ -3,8 +3,8 @@ import chromium from "chromium"
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
 
-chromium.setHeadlessMode = true; 
-chromium.setGraphicsMode = false;
+// chromium.setHeadlessMode = true; 
+// chromium.setGraphicsMode = false;
 
 const chromiumPath = chromium.path
 
@@ -19,18 +19,22 @@ const newsScraper = async (
   // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
   const browser = await puppeteer.launch({
     // config
-    // args: chromium.args,
-    // defaultViewport: chromium.defaultViewport,
-    // executablePath: await chromium.executablePath(),
-    // headless: chromium.headless,
-    // ignoreHTTPSErrors: true,
+    // executablePath: chromiumPath,
+    // headless: true, // Set to true for running in CI environments
+    // args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
+    headless: true, // Set to true for running in CI environments
+    args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
 
-    headless: true,
-    // args: ['--no-sandbox', '--disable-setuid-sandbox']
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
+    // executablePath: chromiumPath,
     headless: chromium.headless,
     ignoreHTTPSErrors: true,
+    // args: chromium.args,
+    // defaultViewport: chromium.defaultViewport,
+    // executablePath: chromiumPath,
+    // headless: chromium.headless,
+    // ignoreHTTPSErrors: true,
   })
 
   // Create a new page
