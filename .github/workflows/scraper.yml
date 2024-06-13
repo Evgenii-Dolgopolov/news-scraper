@@ -24,9 +24,6 @@ jobs:
       - name: Install Chromium
         run: sudo apt-get install chromium-browser
 
-      - name: Set Chromium path
-        run: echo "CHROMIUM_PATH=$(which chromium-browser)" >> $GITHUB_ENV
-
       - name: Run scraper
         run: |
           echo "SUPABASE_URL=${{ secrets.SUPABASE_URL }}" >> .env

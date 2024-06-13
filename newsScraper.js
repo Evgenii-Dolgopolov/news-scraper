@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer"
-import chromium from "chromium"
+// import chromium from "chromium"
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
 
@@ -23,7 +23,7 @@ const newsScraper = async (
 
     // args: chromium.args,
     // defaultViewport: chromium.defaultViewport,
-    // // executablePath: chromiumPath,
+    // executablePath: chromiumPath,
     // headless: chromium.headless,
     // ignoreHTTPSErrors: true,
   })
