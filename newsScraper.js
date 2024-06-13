@@ -3,8 +3,8 @@ import chromium from "chromium"
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
 
-// chromium.setHeadlessMode = true; 
-// chromium.setGraphicsMode = false;
+chromium.setHeadlessMode = true; 
+chromium.setGraphicsMode = false;
 
 const chromiumPath = chromium.path
 
