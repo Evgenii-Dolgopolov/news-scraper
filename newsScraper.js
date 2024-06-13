@@ -1,9 +1,12 @@
 import puppeteer from "puppeteer"
+import chromium from "chromium"
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
 
 // chromium.setHeadlessMode = true; 
 // chromium.setGraphicsMode = false;
+
+const chromiumPath = chromium.path
 
 const newsScraper = async (
   url,
@@ -24,6 +27,10 @@ const newsScraper = async (
 
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
+    // args: chromium.args,
+    // defaultViewport: chromium.defaultViewport,
+    // headless: chromium.headless,
+    // ignoreHTTPSErrors: true,
   })
 
   // Create a new page
