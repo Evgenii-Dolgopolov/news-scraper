@@ -1,8 +1,10 @@
 import puppeteer from "puppeteer"
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
+
 chromium.setHeadlessMode = true; 
 chromium.setGraphicsMode = false;
+
 const newsScraper = async (
   url,
   articleSelectors,
@@ -13,6 +15,7 @@ const newsScraper = async (
 ) => {
   // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
   const browser = await puppeteer.launch({
+    // config
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath(),
@@ -28,7 +31,7 @@ const newsScraper = async (
   )
 
   try {
-    // Navigate to the URL with a longer timeout
+    // Navigate to the URL
     await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 })
 
     // Extract articles based on multiple selectors
