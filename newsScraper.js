@@ -26,11 +26,11 @@ const newsScraper = async (
     // ignoreHTTPSErrors: true,
 
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-    // args: chromium.args,
-    // defaultViewport: chromium.defaultViewport,
-    // headless: chromium.headless,
-    // ignoreHTTPSErrors: true,
+    // args: ['--no-sandbox', '--disable-setuid-sandbox']
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    headless: chromium.headless,
+    ignoreHTTPSErrors: true,
   })
 
   // Create a new page
