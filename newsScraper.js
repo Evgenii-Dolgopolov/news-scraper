@@ -3,8 +3,7 @@ import chromium from "chromium"
 
 // const chromiumPath = chromium.path
 // console.log(chromiumPath)
-const chromiumPath = process.env.CHROMIUM_PATH || '/Users/one/Desktop/dev/my-apps/js-projects/news-scraper/node_modules/chromium/lib/chromium/chrome-mac/Chromium.app/Contents/MacOS/Chromium';
-
+const chromiumPath = process.env.CHROMIUM_PATH || chromium.path
 
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
