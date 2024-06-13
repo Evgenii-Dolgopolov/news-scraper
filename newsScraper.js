@@ -11,7 +11,9 @@ const newsScraper = async (
   websiteName
 ) => {
   // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    headless: true,
+  })
 
   // Create a new page
   const page = await browser.newPage()
