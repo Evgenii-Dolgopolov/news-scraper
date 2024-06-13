@@ -2,6 +2,7 @@ import puppeteer from "puppeteer"
 import chromium from "chromium"
 
 const chromiumPath = chromium.path
+console.log(chromiumPath)
 
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
