@@ -18,9 +18,9 @@ const newsScraper = async (
 ) => {
   // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
   const browser = await puppeteer.launch({
-    executablePath: chromiumPath,
-    headless: true, // Set to true for running in CI environments
-    args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
+    // executablePath: chromiumPath,
+    // headless: true, // Set to true for running in CI environments
+    // args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
 
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
