@@ -1,7 +1,8 @@
 import puppeteer from "puppeteer"
 import { checkIfExistsInSupabase, storeDataInSupabase } from "./storeData.js"
 import { convert } from "html-to-text"
-
+chromium.setHeadlessMode = true; 
+chromium.setGraphicsMode = false;
 const newsScraper = async (
   url,
   articleSelectors,
