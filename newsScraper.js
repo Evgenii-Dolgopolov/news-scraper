@@ -19,9 +19,6 @@ const newsScraper = async (
   // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
   const browser = await puppeteer.launch({
     // config
-    // executablePath: chromiumPath,
-    // headless: true, // Set to true for running in CI environments
-    // args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
     headless: true, // Set to true for running in CI environments
     args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
 
@@ -30,6 +27,7 @@ const newsScraper = async (
     // executablePath: chromiumPath,
     headless: chromium.headless,
     ignoreHTTPSErrors: true,
+
     // args: chromium.args,
     // defaultViewport: chromium.defaultViewport,
     // executablePath: chromiumPath,
@@ -46,7 +44,7 @@ const newsScraper = async (
 
   try {
     // Navigate to the URL
-    await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 })
+    await page.goto(url, { waitUntil: "networkidle2", timeout: 15000 })
 
     // Extract articles based on multiple selectors
     const articleLinks = await page.evaluate(
@@ -78,7 +76,7 @@ const newsScraper = async (
         // Navigate to the article URL with a longer timeout
         await page.goto(article.url, {
           waitUntil: "networkidle2",
-          timeout: 60000,
+          timeout: 15000,
         })
 
         const content = await page.evaluate(contentSels => {
