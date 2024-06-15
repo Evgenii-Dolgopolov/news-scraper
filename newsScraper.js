@@ -22,7 +22,7 @@ const newsScraper = async (
     headless: chromium.headless,
     executablePath: process.env.CHROMIUM_PATH,
     ignoreHTTPSErrors: true,
-    protocolTimeout: 60000
+    protocolTimeout: 100000
   })
 
   // Create a new page
