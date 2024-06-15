@@ -1,6 +1,6 @@
 import { newsScraper } from "../newsScraper.js"
 
-const url = "https://business.inquirer.net/" 
+const url = "https://business.inquirer.net" 
 
 const articleSelectors = ["#ncg-box"]
 const titleSelectors = ["h1"]

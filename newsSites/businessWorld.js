@@ -1,6 +1,6 @@
 import { newsScraper } from "../newsScraper.js"
 
-const url = "https://www.bworldonline.com/economy/"
+const url = "https://www.bworldonline.com/economy"
 
 const articleSelectors = [".item-details"]
 const titleSelectors = ["h3"]
