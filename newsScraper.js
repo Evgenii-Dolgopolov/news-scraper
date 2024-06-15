@@ -32,7 +32,7 @@ const newsScraper = async (
 
   try {
     // Navigate to the URL
-    await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 })
+    await page.goto(url, { waitUntil: "networkidle2", timeout: 100000 })
     console.log(`Going to URL: ${url}`)
 
     // Extract articles based on multiple selectors
@@ -65,7 +65,7 @@ const newsScraper = async (
         // Navigate to the article URL with a longer timeout
         await page.goto(article.url, {
           waitUntil: "networkidle2",
-          timeout: 15000,
+          timeout: 100000,
         })
 
         const content = await page.evaluate(contentSels => {
