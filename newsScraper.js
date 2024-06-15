@@ -109,11 +109,11 @@ const newsScraper = async (
           // console.log(`Article with URL ${article.url} has no content. Skipping insertion.`);
         }
       } catch (error) {
-        console.error(`Error navigating to ${article.url}: ${error.message}`)
+        console.error(`Error navigating to ${article.url} because ${error.message}`)
       }
     }
   } catch (error) {
-    console.error(`Error navigating to ${url}: ${error.message}`)
+    console.error(`Error navigating to ${url} because ${error.message}`)
   } finally {
     // Close the browser instance
     await browser.close()
