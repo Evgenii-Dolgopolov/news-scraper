@@ -29,8 +29,8 @@ const newsScraper = async (
   const page = await browser.newPage()
 
   // Set specific timeouts for actions
-  page.setDefaultNavigationTimeout(100000) // Navigation timeout
-  page.setDefaultTimeout(100000) // Overall page timeout
+  page.setDefaultNavigationTimeout(110000) // Navigation timeout
+  page.setDefaultTimeout(110000) // Overall page timeout
 
   // Set user agent to prevent detection
   await page.setUserAgent(
