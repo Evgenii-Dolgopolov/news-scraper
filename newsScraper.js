@@ -11,18 +11,15 @@ const newsScraper = async (
   contentSelectors,
   websiteName
 ) => {
-  // Launch Puppeteer browser instance (Implemented for The Jakarta Post)
+  // Launch Puppeteer browser instance
   const browser = await puppeteer.launch({
     // config
     headless: true, // Set to true for running in CI environments
     args: ["--no-sandbox", "--disable-setuid-sandbox"], // Necessary for running in CI environments
-
-    // args: chromium.args,
     defaultViewport: chromium.defaultViewport,
     headless: chromium.headless,
     executablePath: process.env.CHROMIUM_PATH,
     ignoreHTTPSErrors: true,
-    // protocolTimeout: 100000
   })
 
   // Create a new page
